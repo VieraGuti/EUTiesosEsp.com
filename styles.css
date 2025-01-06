@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     justify-content: center; /* Centrado vertical */
     align-items: center; /* Centrado horizontal */
-    height: 100vh; /* Asegura que la página ocupe toda la altura de la ventana */
+    min-height: 100vh; /* Asegura que la página ocupe toda la altura de la ventana */
 }
 
 /* Página principal con imagen de fondo y efecto zoom */
@@ -31,7 +31,8 @@ body.home-page {
     body.home-page {
         background: url('https://w0.peakpx.com/wallpaper/147/1012/HD-wallpaper-rust-game-simple-pc-rust-game-video-game.jpg') no-repeat center center fixed;
         background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-        height: 100vh; /* Asegura que la imagen cubra toda la altura de la ventana */
+        background-position: center center; /* Centra la imagen de fondo */
+        min-height: 100vh; /* Asegura que la imagen cubra toda la altura de la ventana */
     }
 }
 
@@ -329,4 +330,14 @@ footer a:hover {
 /* Mostrar el texto al hacer scroll */
 body.scrolled #discord-widget-text {
     opacity: 1;
+}
+
+/* Deshabilitar el scroll en dispositivos móviles */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Activar el scroll cuando se haga clic en el botón */
+body.scroll-enabled {
+    overflow: auto;
 }
