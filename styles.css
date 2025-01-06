@@ -240,3 +240,33 @@ footer a:hover {
         font-size: 12px;
     }
 }
+
+/* Estilo del widget de Discord */
+#discord-widget {
+    margin-top: 30px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 50;
+    width: 350px; /* Tamaño ajustado para pantallas grandes */
+    height: 500px;
+    max-width: 90%; /* Max width para pantallas pequeñas */
+    max-height: 80vh; /* Altura adaptativa en móviles */
+}
+
+@media (max-width: 768px) {
+    /* En pantallas medianas (tabletas) */
+    #discord-widget {
+        width: 250px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* En pantallas pequeñas (móviles) */
+    #discord-widget {
+        width: 100%; /* Acomoda el widget al ancho de la pantalla */
+        height: 350px; /* Altura ajustada para móviles */
+        bottom: 10px; /* Acomoda el widget para no superponerse */
+    }
+}
