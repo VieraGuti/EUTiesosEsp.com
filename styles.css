@@ -31,10 +31,10 @@ body.home-page {
 @media (max-width: 768px) {
     body.home-page {
         background: url('https://w0.peakpx.com/wallpaper/147/1012/HD-wallpaper-rust-game-simple-pc-rust-game-video-game.jpg') no-repeat center center;
-        background-size: 110%; /* Aumenta la imagen un 10% */
+        background-size: cover; /* Usar cover para asegurar que cubra toda la pantalla */
         background-position: center center; /* Centra la imagen de fondo */
+        background-attachment: scroll; /* Desactiva el fondo fijo en móviles, pero la imagen será visible */
         min-height: 100vh; /* Asegura que la imagen cubra toda la altura de la ventana */
-        background-attachment: scroll; /* Desactiva el fondo fijo en móviles */
         animation: zoomBackgroundMobile 30s infinite alternate ease-in-out; /* Animación ajustada para móviles */
     }
 }
@@ -63,6 +63,7 @@ body.home-page {
 body.clicked {
     background-color: #1F1F1F;
 }
+
 /* Contenedor de partículas */
 #particles-js {
     position: absolute;
