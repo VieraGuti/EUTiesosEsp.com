@@ -7,10 +7,21 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    background-color: #121212;
-    color: #E6E6E6;
+    color: #E6E6E6;  /* Texto claro pero no blanco */
     text-align: center;
     overflow-x: hidden;
+    transition: background-color 0.5s ease; /* Transición suave para el cambio de fondo */
+}
+
+/* Página principal con imagen de fondo */
+body.home-page {
+    background: url('https://your-image-url-here.jpg') no-repeat center center fixed; /* Imagen de fondo */
+    background-size: cover;
+}
+
+/* Página después de hacer clic en el botón */
+body.clicked {
+    background-color: #1F1F1F; /* Fondo gris después de hacer clic */
 }
 
 /* Efecto de partículas de fondo */
@@ -34,7 +45,7 @@ body {
 header {
     padding: 20px;
 }
- 
+
 #logo-container img {
     width: 200px;
     height: auto;
@@ -44,7 +55,7 @@ header {
 /* Texto de bienvenida */
 #intro-text {
     font-size: 24px;
-    color: #F1C232;
+    color: #D9771E;  /* Color más rústico similar al de Rust */
     opacity: 0;
     animation: fadeIn 2s forwards;
     margin-top: 20px;
@@ -57,8 +68,8 @@ header {
 
 /* Estilo de botones */
 button {
-    background-color: #D9771E; /* Color de Rust */
-    color: white;
+    background-color: #D9771E; /* Color rústico, similar al de Rust */
+    color: #F1C232;  /* Color dorado claro para contraste */
     padding: 16px 32px;
     border: none;
     border-radius: 8px;
@@ -84,7 +95,7 @@ button:focus {
 }
 
 .social-links a {
-    color: #F1C232;
+    color: #D9771E;  /* Color similar al del Rust */
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
@@ -92,20 +103,20 @@ button:focus {
 }
 
 .social-links a:hover {
-    color: #D9771E;
+    color: #F1C232; /* Color dorado claro */
 }
 
 /* Estilo de la sección de términos */
 main {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);  /* Fondo oscuro, similar al ambiente de Rust */
     border-radius: 10px;
     margin-top: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
 h2, h3 {
-    color: #F1C232;
+    color: #F1C232; /* Color dorado claro */
     font-size: 26px;
     margin-top: 20px;
 }
@@ -118,11 +129,12 @@ ul {
 ul li {
     font-size: 18px;
     margin-bottom: 10px;
+    color: #D1D1D1; /* Color más apagado para los textos */
 }
 
 /* Fondo de la sección de términos */
 section {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
     padding: 30px;
     border-radius: 10px;
     max-width: 800px;
@@ -139,7 +151,7 @@ hr {
 /* Enlaces de Discord */
 footer {
     padding: 20px;
-    background-color: #121212;
+    background-color: #1F1F1F; /* Fondo más oscuro */
     color: #E6E6E6;
     text-align: center;
     position: fixed;
@@ -157,7 +169,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #D9771E;
+    color: #D9771E; /* Color rústico para el hover */
 }
 
 /* Responsividad */
@@ -214,3 +226,4 @@ footer a:hover {
         font-size: 12px;
     }
 }
+
