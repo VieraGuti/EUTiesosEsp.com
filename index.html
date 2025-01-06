@@ -17,6 +17,7 @@
     <!-- Contenedor para partículas -->
     <div id="particles-js"></div>
 
+    <!-- Sección 1: Logo, texto, botón, y enlaces sociales -->
     <header id="content-container">
         <div id="logo-container">
             <img src="https://raw.githubusercontent.com/VieraGuti/EUTiesosEsp.com/main/FHC7KBW%20-%20Imgur.gif" alt="Rust Server Logo" id="logo">
@@ -32,6 +33,7 @@
         </div>
     </header>
 
+    <!-- Sección 2: Términos y condiciones -->
     <main id="terms-section" style="display:none;">
         <section>
             <h2>Términos y Condiciones del Servidor "EU Tiesos España"</h2>
@@ -104,6 +106,7 @@
         </section>
     </main>
 
+    <!-- Widget de Discord (sección 2) -->
     <div id="discord-widget">
         <iframe src="https://discord.com/widget?id=1191457016732995594&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
     </div>
@@ -176,6 +179,7 @@
             document.getElementById('discord-widget').style.zIndex = '50';
         }
 
+        // Funcionalidad de ocultar o mostrar el widget de Discord con el desplazamiento
         window.addEventListener('scroll', function () {
             let discordWidget = document.getElementById('discord-widget');
             if (window.scrollY > 200) { // Mostrar el widget después de que el usuario haya desplazado 200px
@@ -185,6 +189,7 @@
             }
         });
 
+        // Mostrar el texto en Discord cuando se hace scroll
         window.onscroll = function() {
             if (window.scrollY > 50) {  // Ajusta el valor de desplazamiento que desees
                 document.body.classList.add("scrolled");
@@ -193,7 +198,7 @@
             }
         };
     </script>
+
 </body>
 
 </html>
- 
