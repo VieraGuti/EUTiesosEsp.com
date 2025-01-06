@@ -178,6 +178,17 @@
             margin-top: 20px;
             color: #fff;
         }
+
+        /* Ajustes del widget de Discord */
+        #discord-widget {
+            margin-top: 30px;
+        }
+
+        /* Botón de volver */
+        #back-button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -277,24 +288,26 @@
             <p>Para más información o soporte, únete a nuestro Discord: <a href="https://discord.gg/tiesosesp" target="_blank">discord.gg/tiesosesp</a></p>
             
         </section>
+
+        <!-- Botón Volver -->
+        <div id="back-button-container">
+            <button onclick="hideTerms()">Volver</button>
+        </div>
     </main>
 
     <!-- Widget de Discord -->
     <div id="discord-widget">
         <h3>Miembros Conectados</h3>
         <iframe src="https://discord.com/widget?id=1191457016732995594&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-        <p><a href="https://discord.gg/tiesosesp" target="_blank">Únete a nuestro Discord</a></p>
     </div>
 
     <script>
-        // Función para mostrar los términos cuando se presiona el botón
         function showTerms() {
-            var termsSection = document.getElementById('terms-section');
-            if (termsSection.style.display === 'none') {
-                termsSection.style.display = 'block';
-            } else {
-                termsSection.style.display = 'none';
-            }
+            document.getElementById('terms-section').style.display = 'block';
+        }
+
+        function hideTerms() {
+            document.getElementById('terms-section').style.display = 'none';
         }
     </script>
 
