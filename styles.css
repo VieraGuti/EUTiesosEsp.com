@@ -285,6 +285,11 @@ footer a:hover {
     body.scrolled #discord-widget-text {
         opacity: 1;
     }
+
+    /* Imagen de fondo a pantalla completa */
+    body.home-page {
+        background-size: 100% 100%;
+    }
 }
 
 @media (min-width: 769px) {
@@ -298,4 +303,3 @@ footer a:hover {
 body.scrolled #discord-widget-text {
     opacity: 1;
 }
-
