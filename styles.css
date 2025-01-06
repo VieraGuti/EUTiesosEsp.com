@@ -362,7 +362,7 @@ button:hover {
     background-color: #C24F1F;
 }
 
-/* Estilo del widget de Discord (añadiendo borde y suavizando el GIF) */
+/* Estilo del widget de Discord (sin animación y en la esquina derecha en PC) */
 #discord-widget {
     margin-top: 30px;
     position: fixed;
@@ -382,11 +382,6 @@ button:hover {
     height: auto;
     border-radius: 10px;  /* Bordes redondeados */
     transition: transform 0.3s ease;
-}
-
-/* Cuando se pasa el mouse sobre el widget */
-#discord-widget:hover img {
-    transform: scale(1.05);  /* Agrandar ligeramente el GIF */
 }
 
 /* Responsividad para móviles */
