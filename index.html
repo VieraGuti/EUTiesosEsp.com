@@ -13,10 +13,11 @@
     <script data-goatcounter="https://tiesos-esp.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <!-- Animación de fondo o efectos -->
     <style>
-        /* Efecto de partículas sutil en el fondo */
+        /* Estilos de cuerpo */
         body {
             position: relative;
-            background-color: #121212;
+            background: url('https://rare-gallery.com/uploads/posts/4511237-rust-game-steam-software-sun-rays-airdrop-forest.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #E6E6E6;
             font-family: 'Russo One', sans-serif;
             text-align: center;
@@ -24,8 +25,10 @@
             font-size: 16px;
             margin: 0;
             padding: 0;
+            overflow: hidden;
         }
 
+        /* Efecto de partículas sutil en el fondo */
         .particle-effect {
             position: absolute;
             top: 0;
@@ -54,6 +57,26 @@
         @keyframes fadeIn {
             0% { opacity: 0; }
             100% { opacity: 1; }
+        }
+
+        /* Ajustes del logo con bordes redondeados y efecto */
+        #logo-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 50px;
+            animation: logoAnimation 3s ease-in-out infinite;
+        }
+
+        #logo {
+            width: 250px;
+            height: auto;
+            border-radius: 20px; /* Bordes redondeados */
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.5); /* Sombra sutil para destacar el logo */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #logo:hover {
+            transform: scale(1.1);
         }
 
         /* Ajustes de los botones */
@@ -91,6 +114,19 @@
 
         .social-links a:hover {
             color: #D9771E;
+        }
+
+        /* Animación para el logo */
+        @keyframes logoAnimation {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(15deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
         }
     </style>
 </head>
@@ -216,3 +252,4 @@
     </script>
 </body>
 </html>
+
