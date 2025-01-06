@@ -259,7 +259,7 @@ footer a:hover {
 /* Widget de Discord y texto */
 #discord-widget {
     position: fixed;
-    bottom: 20px; /* Fijo en la parte inferior */
+    bottom: 40px; /* Ajustar la distancia desde el borde inferior */
     right: 20px; /* A la derecha */
     border: 3px solid #D9771E;
     border-radius: 10px;
