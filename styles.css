@@ -11,23 +11,6 @@ body {
     text-align: center;
     overflow-x: hidden;
     transition: background-color 0.5s ease; /* Transición suave para el cambio de fondo */
-    position: relative;
-    background: url('https://rare-gallery.com/uploads/posts/4511237-rust-game-steam-software-sun-rays-airdrop-forest.jpg') no-repeat center center fixed;
-    background-size: cover;
-    animation: zoomBackground 60s infinite linear; /* Fondo con animación más lenta */
-}
-
-/* Animación de zoom para el fondo (más lento) */
-@keyframes zoomBackground {
-    0% {
-        transform: scale(1); /* Fondo normal */
-    }
-    50% {
-        transform: scale(1.05); /* Fondo un poco ampliado */
-    }
-    100% {
-        transform: scale(1); /* Fondo regresa a su tamaño normal */
-    }
 }
 
 /* Página principal con imagen de fondo */
@@ -362,65 +345,47 @@ button:hover {
     background-color: #C24F1F;
 }
 
-/* Estilo del widget de Discord (fijo en la parte inferior) */
+/* Estilo del widget de Discord */
 #discord-widget {
+    margin-top: 30px;
     position: fixed;
-    bottom: 20px;  /* Posición en la parte inferior */
-    left: 50%;    /* Centrado horizontal */
-    transform: translateX(-50%);  /* Alineación perfecta en el centro */
-    z-index: 10;   /* Asegura que el widget esté por encima del fondo, pero debajo de los botones */
-    border-radius: 20px;  /* Bordes más redondeados */
-    border: 5px solid #F1C232;  /* Borde dorado para destacarlo */
-    box-shadow: 0 0 20px rgba(255, 165, 0, 0.8); /* Sombra más destacada */
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para que resalte */
-    animation: pulse 2s infinite; /* Animación de pulsación suave */
-}
-
-/* Animación de pulsación para el widget */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05); /* Aumenta un poco de tamaño para llamar la atención */
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Para los GIFs del widget */
-#discord-widget img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;  /* Bordes redondeados */
-    transition: transform 0.3s ease;
-    box-shadow: 0 0 15px rgba(255, 165, 0, 0.8); /* Sombra para el GIF */
-}
-
-/* Efecto al pasar el cursor sobre el widget */
-#discord-widget:hover {
-    box-shadow: 0 0 30px rgba(255, 165, 0, 1);  /* Aumenta la sombra en hover */
-    transform: scale(1.05);  /* Aumenta el tamaño ligeramente */
+    bottom: 20px;
+    right: 20px;
+    z-index: 50;
 }
 
 /* Responsividad para móviles */
 @media (max-width: 768px) {
     #discord-widget {
         position: fixed;
-        bottom: 20px;  /* Ajustado para móviles, en la parte inferior */
-        left: 50%;    /* Centrado horizontal */
-        transform: translateX(-50%); /* Alineación perfecta */
+        bottom: 10px; /* Más abajo en móviles */
+        left: 0;
+        right: 0;
         z-index: 50;
         background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para destacar */
         padding: 10px;
-        display: block;
+        display: block; /* Asegurar que se muestre */
         text-align: center;
-        border-radius: 15px; /* Bordes más suaves en móviles */
     }
+}
 
-    #discord-widget img {
-        border-radius: 8px;  /* Bordes menos redondeados para imágenes en móvil */
-    }
+.social-links {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.social-links a {
+    color: #F1C232;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.social-links a:hover {
+    color: #D9771E;
+}
+
+#content-container.hidden {
+    display: none;
 }
