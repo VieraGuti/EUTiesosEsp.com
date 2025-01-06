@@ -7,38 +7,78 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    color: #E6E6E6;  /* Texto claro pero no blanco */
+    color: #E6E6E6; /* Texto claro pero no blanco */
     text-align: center;
     overflow-x: hidden;
     transition: background-color 0.5s ease; /* Transición suave para el cambio de fondo */
+    position: relative;
 }
 
 /* Página principal con imagen de fondo */
 body.home-page {
-    background: url('https://your-image-url-here.jpg') no-repeat center center fixed; /* Imagen de fondo */
+    background: url('https://your-image-url-here.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
 /* Página después de hacer clic en el botón */
 body.clicked {
-    background-color: #1F1F1F; /* Fondo gris después de hacer clic */
+    background-color: #1F1F1F;
 }
 
-/* Efecto de partículas de fondo */
+/* Contenedor de partículas */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Colocar detrás del contenido principal */
+    pointer-events: none;
+}
+
+/* Efecto de partículas */
+.spark {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #F1C232; /* Color dorado brillante */
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: sparkle 2s linear infinite;
+}
+
+/* Animación de las chispas */
+@keyframes sparkle {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+        transform: translate(50px, -50px) scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(100px, -100px) scale(0.5);
+    }
+}
+
+/* Movimiento de partículas */
+@keyframes moveParticles {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
 .particle-effect {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
     pointer-events: none;
     background: url('https://cdn.pixabay.com/photo/2017/08/30/00/21/abstract-2695564_960_720.jpg') repeat;
-    animation: moveParticles 60s infinite linear;
-}
-
-@keyframes moveParticles {
-    0% { background-position: 0 0; }
-    100% { background-position: 10000px 10000px; }
+    animation: moveParticles 30s infinite linear;
 }
 
 /* Encabezado y logo */
@@ -50,26 +90,26 @@ header {
     width: 200px;
     height: auto;
     margin-bottom: 20px;
-    animation: logoZoom 3s ease-in-out infinite; /* Animación de zoom */
+    animation: logoZoom 3s ease-in-out infinite;
 }
 
 /* Animación de zoom (agrandarse y reducirse) */
 @keyframes logoZoom {
     0% {
-        transform: scale(1); /* Tamaño original */
+        transform: scale(1);
     }
     50% {
-        transform: scale(1.2); /* Agrandarse */
+        transform: scale(1.2);
     }
     100% {
-        transform: scale(1); /* Regresar al tamaño original */
+        transform: scale(1);
     }
 }
 
 /* Texto de bienvenida */
 #intro-text {
     font-size: 24px;
-    color: #D9771E;  /* Color más rústico similar al de Rust */
+    color: #D9771E;
     opacity: 0;
     animation: fadeIn 2s forwards;
     margin-top: 20px;
@@ -82,8 +122,8 @@ header {
 
 /* Estilo de botones */
 button {
-    background-color: #D9771E; /* Color rústico, similar al de Rust */
-    color: #F1C232;  /* Color dorado claro para contraste */
+    background-color: #D9771E;
+    color: #F1C232;
     padding: 16px 32px;
     border: none;
     border-radius: 8px;
@@ -109,7 +149,7 @@ button:focus {
 }
 
 .social-links a {
-    color: #D9771E;  /* Color similar al del Rust */
+    color: #D9771E;
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
@@ -117,20 +157,20 @@ button:focus {
 }
 
 .social-links a:hover {
-    color: #F1C232; /* Color dorado claro */
+    color: #F1C232;
 }
 
 /* Estilo de la sección de términos */
 main {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);  /* Fondo oscuro, similar al ambiente de Rust */
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     margin-top: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
 h2, h3 {
-    color: #F1C232; /* Color dorado claro */
+    color: #F1C232;
     font-size: 26px;
     margin-top: 20px;
 }
@@ -143,12 +183,11 @@ ul {
 ul li {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #D1D1D1; /* Color más apagado para los textos */
+    color: #D1D1D1;
 }
 
-/* Fondo de la sección de términos */
 section {
-    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+    background: rgba(0, 0, 0, 0.7);
     padding: 30px;
     border-radius: 10px;
     max-width: 800px;
@@ -165,7 +204,7 @@ hr {
 /* Enlaces de Discord */
 footer {
     padding: 20px;
-    background-color: #1F1F1F; /* Fondo más oscuro */
+    background-color: #1F1F1F;
     color: #E6E6E6;
     text-align: center;
     position: fixed;
@@ -183,7 +222,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #D9771E; /* Color rústico para el hover */
+    color: #D9771E;
 }
 
 /* Responsividad */
@@ -239,161 +278,4 @@ footer a:hover {
     footer {
         font-size: 12px;
     }
-}
-
-/* Estilos adicionales para la interfaz */
-body {
-    position: relative;
-    background: url('https://rare-gallery.com/uploads/posts/4511237-rust-game-steam-software-sun-rays-airdrop-forest.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
-
-.particle-effect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: url('https://cdn.pixabay.com/photo/2017/08/30/00/21/abstract-2695564_960_720.jpg') repeat;
-    animation: moveParticles 30s infinite linear;
-}
-
-@keyframes moveParticles {
-    0% { background-position: 0 0; }
-    100% { background-position: 100% 100%; }
-}
-
-#logo-container {
-    position: relative;
-    display: inline-block;
-    margin-top: 50px;
-}
-
-#logo {
-    width: 250px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
-}
-
-#logo:hover {
-    transform: scale(1.05);
-}
-
-#terms-button-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-button {
-    background-color: #D9771E;
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Roboto', sans-serif;
-}
-
-button:hover {
-    background-color: #C24F1F;
-}
-
-#terms-section {
-    display: none;
-    max-height: 80vh;
-    overflow-y: auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    margin-top: 20px;
-    color: #fff;
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    cursor: move;
-}
-
-#back-button-container,
-#store-button-container {
-    margin-top: 20px;
-    text-align: center;
-}
-
-#back-button,
-#store-button {
-    background-color: #FF6347;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Roboto', sans-serif;
-}
-
-#back-button:hover,
-#store-button:hover {
-    background-color: #C24F1F;
-}
-
-/* Estilo del widget de Discord */
-#discord-widget {
-    margin-top: 30px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 50;
-    border: 4px solid #D9771E;  /* Borde con el color rústico */
-    border-radius: 10px;  /* Bordes redondeados */
-    padding: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);  /* Sombra sutil alrededor */
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
-}
-
-/* Responsividad para móviles */
-@media (max-width: 768px) {
-    #discord-widget {
-        position: fixed;
-        bottom: 10px; /* Más abajo en móviles */
-        left: 0;
-        right: 0;
-        z-index: 50;
-        background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para destacar */
-        padding: 10px;
-        display: block; /* Asegurar que se muestre */
-        text-align: center;
-        border-radius: 10px; /* Bordes redondeados */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Sombra sutil */
-        border: 4px solid #D9771E;  /* Borde con el color rústico */
-    }
-}
-
-.social-links {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-.social-links a {
-    color: #F1C232;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
-}
-
-.social-links a:hover {
-    color: #D9771E;
-}
-
-#content-container.hidden {
-    display: none;
 }
