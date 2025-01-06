@@ -16,7 +16,7 @@ body {
 
 /* Página principal con imagen de fondo y efecto zoom */
 body.home-page {
-    background: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Frare-gallery.com%2Fxfsearch%2Falt%2FRust%2B%2528game%2529%2F&psig=AOvVaw0hAFh_dhpvXY9wEmWkqDNI&ust=1736259690005000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLj_x8Gl4YoDFQAAAAAdAAAAABB1') no-repeat center center fixed;
+    background: url('https://rare-gallery.com/uploads/posts/4511237-rust-game-steam-software-sun-rays-airdrop-forest.jpg') no-repeat center center fixed;
     background-size: cover;
     animation: zoomBackground 30s infinite alternate ease-in-out;
 }
