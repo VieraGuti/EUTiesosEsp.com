@@ -133,16 +133,20 @@ ul li:hover {
     margin-top: 40px;
 }
 
+/* Mejorar el estilo del GIF */
 #gif img {
-    width: 100%;
-    max-width: 700px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
-    transition: transform 0.3s ease;
+    width: 80%; /* Ajustamos el tamaño al 80% del contenedor */
+    max-width: 700px; /* Tamaño máximo */
+    height: auto;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.5); /* Sombra para resaltar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efecto hover para el GIF */
 #gif img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Le da un pequeño zoom cuando pasa el cursor */
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.7); /* Aumenta la sombra */
 }
 
 /* Footer */
