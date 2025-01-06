@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Servidor Rust Console Edition - EU Tiesos España">
     <title>EU Tiesos España - Rust Console Edition</title>
-    <!-- Incluir fuente Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos de fondo y efectos */
         body {
             position: relative;
             background: url('https://rare-gallery.com/uploads/posts/4511237-rust-game-steam-software-sun-rays-airdrop-forest.jpg') no-repeat center center fixed;
@@ -24,7 +22,6 @@
             overflow: hidden;
         }
 
-        /* Efecto de partículas sutil en el fondo */
         .particle-effect {
             position: absolute;
             top: 0;
@@ -46,7 +43,6 @@
             }
         }
 
-        /* Estilo de logo */
         #logo-container {
             position: relative;
             display: inline-block;
@@ -65,7 +61,6 @@
             transform: scale(1.05);
         }
 
-        /* Estilo de los botones */
         #terms-button-container {
             margin-top: 20px;
             display: flex;
@@ -88,7 +83,6 @@
             background-color: #C24F1F;
         }
 
-        /* Sección de términos */
         #terms-section {
             display: none;
             max-height: 80vh;
@@ -106,7 +100,6 @@
             cursor: move;
         }
 
-        /* Botón de volver */
         #back-button-container,
         #store-button-container {
             margin-top: 20px;
@@ -131,7 +124,6 @@
             background-color: #C24F1F;
         }
 
-        /* Discord Widget */
         #discord-widget {
             margin-top: 30px;
             position: fixed;
@@ -140,7 +132,6 @@
             z-index: 50;
         }
 
-        /* Estilo para enlaces de redes sociales */
         .social-links {
             margin-top: 20px;
             font-size: 18px;
@@ -158,12 +149,10 @@
             color: #D9771E;
         }
 
-        /* Ocultar contenido cuando se muestran los términos */
         #content-container.hidden {
             display: none;
         }
 
-        /* Móvil y adaptabilidad */
         @media (max-width: 768px) {
             #logo {
                 width: 200px;
@@ -200,10 +189,8 @@
 </head>
 
 <body>
-    <!-- Fondo con partículas y animación -->
     <div class="particle-effect"></div>
 
-    <!-- Contenedor principal -->
     <header id="content-container">
         <div id="logo-container">
             <img src="https://raw.githubusercontent.com/VieraGuti/EUTiesosEsp.com/main/FHC7KBW%20-%20Imgur.gif" alt="Rust Server Logo" id="logo">
@@ -219,7 +206,6 @@
         </div>
     </header>
 
-    <!-- Sección de Términos y Condiciones -->
     <main id="terms-section">
         <section>
             <h2>Términos y Condiciones del Servidor "EU Tiesos España"</h2>
@@ -283,7 +269,6 @@
             <p><strong>Al continuar jugando en "EU Tiesos España", confirmas que has leído, entendido y aceptado estos términos y condiciones.</strong></p>
             <p><strong>Para más información o soporte, únete a nuestro Discord: <a href="https://discord.gg/tiesosesp" target="_blank">Tiesos España</a></strong></p>
 
-            <!-- Botones -->
             <div id="back-button-container">
                 <button id="back-button" onclick="hideTerms()">Volver</button>
             </div>
@@ -293,27 +278,23 @@
         </section>
     </main>
 
-    <!-- Discord Widget -->
     <div id="discord-widget">
         <iframe src="https://discord.com/widget?id=1191457016732995594&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
     </div>
 
     <script>
-        // Función para mostrar los términos
         function showTerms() {
             document.getElementById('terms-section').style.display = 'block';
             document.getElementById('content-container').classList.add('hidden');
             document.getElementById('discord-widget').style.zIndex = '10';
         }
 
-        // Función para ocultar los términos
         function hideTerms() {
             document.getElementById('terms-section').style.display = 'none';
             document.getElementById('content-container').classList.remove('hidden');
             document.getElementById('discord-widget').style.zIndex = '50';
         }
 
-        // Función para permitir mover el cuadro de términos
         dragElement(document.getElementById("terms-section"));
 
         function dragElement(elmnt) {
