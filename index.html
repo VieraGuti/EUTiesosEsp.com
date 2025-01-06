@@ -28,7 +28,7 @@
             overflow: hidden;
         }
 
-        /* Efecto de partículas sutil en el fondo */
+        /* Efecto de partículas sutil en el fondo (más estable) */
         .particle-effect {
             position: absolute;
             top: 0;
@@ -37,12 +37,31 @@
             height: 100%;
             pointer-events: none;
             background: url('https://cdn.pixabay.com/photo/2017/08/30/00/21/abstract-2695564_960_720.jpg') repeat;
-            animation: moveParticles 60s infinite linear;
+            animation: moveParticles 30s infinite linear;
         }
 
+        /* Animación de partículas con movimiento más estable */
         @keyframes moveParticles {
             0% { background-position: 0 0; }
-            100% { background-position: 10000px 10000px; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0 0; }
+        }
+
+        /* Animación de fondo que cubre la pantalla y regresa */
+        @keyframes fullScreenBackground {
+            0% {
+                background-size: 100%;
+            }
+            50% {
+                background-size: 120%;
+            }
+            100% {
+                background-size: 100%;
+            }
+        }
+
+        .fullscreen-background {
+            animation: fullScreenBackground 20s ease-in-out infinite;
         }
 
         /* Animación de texto de bienvenida */
@@ -128,9 +147,20 @@
                 transform: rotate(0deg);
             }
         }
+
+        /* Ajustes para la sección de términos */
+        #terms-section {
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            margin-top: 20px;
+            color: #fff;
+        }
     </style>
 </head>
-<body>
+<body class="fullscreen-background">
     <div class="particle-effect"></div>
 
     <header>
@@ -241,6 +271,7 @@
             document.getElementById('terms-section').style.display = 'block';
             document.getElementById('intro-text').style.display = 'none';
             document.getElementById('terms-button').style.display = 'none';
+            document.getElementById('terms-section').scrollIntoView({ behavior: 'smooth' });
         }
 
         // Función para volver a la página principal
@@ -252,4 +283,3 @@
     </script>
 </body>
 </html>
-
