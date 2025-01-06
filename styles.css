@@ -29,21 +29,22 @@ body.home-page {
 /* Ajuste del fondo para dispositivos móviles */
 @media (max-width: 768px) {
     body.home-page {
-        background: url('https://w0.peakpx.com/wallpaper/147/1012/HD-wallpaper-rust-game-simple-pc-rust-game-video-game.jpg') no-repeat center center fixed;
+        background: url('https://w0.peakpx.com/wallpaper/147/1012/HD-wallpaper-rust-game-simple-pc-rust-game-video-game.jpg') no-repeat center center;
         background-size: 110%; /* Se hace un 10% más grande */
         background-position: center center; /* Centra la imagen de fondo */
         min-height: 100vh; /* Asegura que la imagen cubra toda la altura de la ventana */
         animation: zoomBackgroundMobile 30s infinite alternate ease-in-out; /* Nueva animación para móviles */
+        background-attachment: scroll; /* Desactiva el fondo fijo en móviles */
     }
 }
 
-/* Animación de zoom de fondo */
-@keyframes zoomBackground {
+/* Animación de zoom para dispositivos móviles */
+@keyframes zoomBackgroundMobile {
     0% {
-        background-size: 100%;
+        background-size: 110%; /* Empieza con un 10% más grande */
     }
     100% {
-        background-size: 120%;
+        background-size: 120%; /* Aumenta hasta un 20% más grande */
     }
 }
 
