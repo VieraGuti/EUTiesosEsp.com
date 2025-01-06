@@ -11,6 +11,23 @@ body {
     text-align: center;
     overflow-x: hidden;
     transition: background-color 0.5s ease; /* Transición suave para el cambio de fondo */
+    position: relative;
+    background: url('https://rare-gallery.com/uploads/posts/4511237-rust-game-steam-software-sun-rays-airdrop-forest.jpg') no-repeat center center fixed;
+    background-size: cover;
+    animation: zoomBackground 60s infinite linear;
+}
+
+/* Animación de zoom para el fondo */
+@keyframes zoomBackground {
+    0% {
+        transform: scale(1); /* Fondo normal */
+    }
+    50% {
+        transform: scale(1.1); /* Fondo ampliado */
+    }
+    100% {
+        transform: scale(1); /* Fondo regresa a su tamaño normal */
+    }
 }
 
 /* Página principal con imagen de fondo */
