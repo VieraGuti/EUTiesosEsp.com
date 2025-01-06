@@ -262,33 +262,40 @@ footer a:hover {
 
 /* Responsividad */
 @media (max-width: 768px) {
+    /* El widget de Discord se oculta en dispositivos móviles */
+    #discord-widget {
+        display: none;
+    }
+
+    /* Mostrar el mensaje en lugar del widget en dispositivos móviles */
+    #discord-message {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #1F1F1F;
+        color: #F1C232;
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        font-size: 16px;
+        z-index: 1000;
+        display: block; /* Hacer visible */
+    }
+
+    /* Estilos del enlace en el mensaje de Discord */
+    #discord-message a {
+        color: #F1C232;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    #discord-message a:hover {
+        color: #D9771E;
+    }
+
     /* El texto de Discord solo se muestra cuando se hace scroll */
     body {
         padding-bottom: 100px; /* Se agrega un espacio para mostrar el texto al hacer scroll */
-    }
-
-    #discord-widget {
-        right: 10px;
-        bottom: 10px;
-        width: 300px;
-        height: 400px;
-        z-index: 999;
-    }
-
-    #discord-widget-text {
-        right: 120px;
-        display: block;
-        opacity: 0;
-    }
-
-    /* El texto aparece cuando se hace scroll */
-    body.scrolled #discord-widget-text {
-        opacity: 1;
-    }
-
-    /* Imagen de fondo a pantalla completa */
-    body.home-page {
-        background-size: 100% 100%;
     }
 }
 
@@ -303,4 +310,3 @@ footer a:hover {
 body.scrolled #discord-widget-text {
     opacity: 1;
 }
- 
