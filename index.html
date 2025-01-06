@@ -127,6 +127,10 @@
         /* Discord Widget */
         #discord-widget {
             margin-top: 30px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 50;
         }
 
         /* Estilo para enlaces de redes sociales */
@@ -149,6 +153,40 @@
         /* Ocultar contenido cuando se muestran los términos */
         #content-container.hidden {
             display: none;
+        }
+
+        /* Móvil y adaptabilidad */
+        @media (max-width: 768px) {
+            #logo {
+                width: 200px;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+
+            #terms-section {
+                width: 90%;
+                top: 50px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 480px) {
+            #logo {
+                width: 150px;
+            }
+
+            button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+
+            #terms-section {
+                width: 95%;
+            }
         }
     </style>
 </head>
@@ -258,12 +296,14 @@
         function showTerms() {
             document.getElementById('terms-section').style.display = 'block';
             document.getElementById('content-container').classList.add('hidden');
+            document.getElementById('discord-widget').style.zIndex = '10';
         }
 
         // Función para ocultar los términos
         function hideTerms() {
             document.getElementById('terms-section').style.display = 'none';
             document.getElementById('content-container').classList.remove('hidden');
+            document.getElementById('discord-widget').style.zIndex = '50';
         }
 
         // Función para permitir mover el cuadro de términos
@@ -306,6 +346,7 @@
 </body>
 
 </html>
+
 
 
 
