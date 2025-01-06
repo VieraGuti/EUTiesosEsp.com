@@ -10,6 +10,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Script de Google Translate -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'es,pt,en,fr,nl',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <style>
+        #google_translate_element {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .goog-te-gadget {
+            background-color: #1F1F1F;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #F1C232;
+            font-size: 16px;
+        }
+
+        .goog-te-gadget-simple {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            font-size: 16px;
+            color: #F1C232;
+        }
+
+        .goog-te-menu-value {
+            color: #F1C232 !important;
+        }
+
+        .goog-te-gadget-icon {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="home-page">
@@ -31,6 +76,9 @@
             <a href="https://www.tiktok.com/@esp.tiesosrce" target="_blank">TikTok</a>
             <a href="https://x.com/TiesosEspana" target="_blank">Twitter</a>
         </div>
+        
+        <!-- Contenedor del selector de idioma -->
+        <div id="google_translate_element"></div>
     </header>
 
     <!-- Sección 2: Términos y condiciones -->
