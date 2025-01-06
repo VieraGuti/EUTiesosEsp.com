@@ -111,7 +111,7 @@
         }
 
         #logo:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         /* Ajustes de los botones */
@@ -156,15 +156,15 @@
         /* Animación para el logo */
         @keyframes logoAnimation {
             0% {
-                transform: rotate(0deg);
+                transform: scale(1);
             }
 
             50% {
-                transform: rotate(15deg);
+                transform: scale(1.1);
             }
 
             100% {
-                transform: rotate(0deg);
+                transform: scale(1);
             }
         }
 
@@ -177,6 +177,7 @@
             border-radius: 10px;
             margin-top: 20px;
             color: #fff;
+            display: none;
         }
 
         /* Ajustes del widget de Discord */
@@ -212,7 +213,7 @@
     </header>
 
     <!-- Sección de Términos y Condiciones, inicialmente oculta -->
-    <main id="terms-section" style="display:none;">
+    <main id="terms-section">
         <section>
             <h2>Términos y Condiciones del Servidor "EU Tiesos España"</h2>
             <p><strong>Última actualización: [01-01-2025]</strong></p>
@@ -285,35 +286,36 @@
             <hr>
 
             <p><strong>Al continuar jugando en "EU Tiesos España", confirmas que has leído, entendido y aceptado estos términos y condiciones.</strong></p>
-            <p>Para más información o soporte, únete a nuestro Discord: <a href="https://discord.gg/tiesosesp" target="_blank">discord.gg/tiesosesp</a></p>
-            
-        </section>
+            <p><strong>Para más información o soporte, únete a nuestro Discord: <a href="https://discord.gg/tiesosesp" target="_blank">Tiesos España</a></strong></p>
 
-        <!-- Botón Volver -->
-        <div id="back-button-container">
-            <button onclick="hideTerms()">Volver</button>
-        </div>
+            <!-- Botón de volver -->
+            <div id="back-button-container">
+                <button onclick="hideTerms()">Volver</button>
+            </div>
+        </section>
     </main>
 
-    <!-- Widget de Discord -->
+    <!-- Discord Widget -->
     <div id="discord-widget">
-        <h3>Miembros Conectados</h3>
         <iframe src="https://discord.com/widget?id=1191457016732995594&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
     </div>
 
     <script>
         function showTerms() {
             document.getElementById('terms-section').style.display = 'block';
+            document.getElementById('terms-button-container').style.display = 'none'; // Oculta el botón
         }
 
         function hideTerms() {
             document.getElementById('terms-section').style.display = 'none';
+            document.getElementById('terms-button-container').style.display = 'flex'; // Vuelve a mostrar el botón
         }
     </script>
 
 </body>
 
 </html>
+
 
 
 
