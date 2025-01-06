@@ -362,11 +362,12 @@ button:hover {
     background-color: #C24F1F;
 }
 
-/* Estilo del widget de Discord (con corrección de la posición) */
+/* Estilo del widget de Discord (fijo en la parte inferior) */
 #discord-widget {
     position: fixed;
     bottom: 20px;  /* Posición en la parte inferior */
-    right: 20px;   /* Posición en la parte derecha */
+    left: 50%;    /* Centrado horizontal */
+    transform: translateX(-50%);  /* Alineación perfecta en el centro */
     z-index: 10;   /* Asegura que el widget esté por encima del fondo, pero debajo de los botones */
     border-radius: 15px;
     border: 5px solid #F1C232;  /* Borde dorado para destacarlo */
@@ -388,7 +389,8 @@ button:hover {
     #discord-widget {
         position: fixed;
         bottom: 20px;  /* Ajustado para móviles, en la parte inferior */
-        right: 20px;   /* Ajustado para móviles, en la parte derecha */
+        left: 50%;    /* Centrado horizontal */
+        transform: translateX(-50%); /* Alineación perfecta */
         z-index: 50;
         background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para destacar */
         padding: 10px;
