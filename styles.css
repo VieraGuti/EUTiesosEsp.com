@@ -50,6 +50,20 @@ header {
     width: 200px;
     height: auto;
     margin-bottom: 20px;
+    animation: logoZoom 3s ease-in-out infinite; /* Animación de zoom */
+}
+
+/* Animación de zoom (agrandarse y reducirse) */
+@keyframes logoZoom {
+    0% {
+        transform: scale(1); /* Tamaño original */
+    }
+    50% {
+        transform: scale(1.2); /* Agrandarse */
+    }
+    100% {
+        transform: scale(1); /* Regresar al tamaño original */
+    }
 }
 
 /* Texto de bienvenida */
@@ -226,4 +240,5 @@ footer a:hover {
         font-size: 12px;
     }
 }
+
 
