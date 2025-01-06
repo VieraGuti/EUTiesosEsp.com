@@ -7,7 +7,7 @@
 
 /* Fondo general */
 body {
-    background-color: #121212;
+    background-color: #121212 !important;
     color: #E6E6E6;
     font-family: 'Russo One', sans-serif;
     text-align: center;
@@ -53,6 +53,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 20px;
+    display: inline-block;
 }
 
 button:hover {
@@ -139,6 +140,8 @@ a:hover {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 30px;
+    display: inline-block;
+    text-align: center;
 }
 
 #terms-button:hover {
@@ -173,4 +176,29 @@ a:hover {
     li {
         font-size: 16px;
     }
+}
+
+/* Estilos para el enlace del botón y alineación */
+#terms-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#terms-button-container a {
+    background-color: #1E1E1E;
+    color: #F1C232;
+    padding: 15px 25px;
+    border: 2px solid #F1C232;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+#terms-button-container a:hover {
+    background-color: #F1C232;
+    color: #1E1E1E;
 }
