@@ -104,12 +104,14 @@
         }
 
         /* Botón de volver */
-        #back-button-container {
+        #back-button-container,
+        #store-button-container {
             margin-top: 20px;
             text-align: center;
         }
 
-        #back-button {
+        #back-button,
+        #store-button {
             background-color: #FF6347;
             color: #fff;
             padding: 10px 20px;
@@ -120,7 +122,8 @@
             transition: background-color 0.3s ease;
         }
 
-        #back-button:hover {
+        #back-button:hover,
+        #store-button:hover {
             background-color: #C24F1F;
         }
 
@@ -247,14 +250,10 @@
 
             <h3>5. EVENTOS Y CONFIGURACIONES DEL SERVIDOR</h3>
             <ul>
-                <li><strong>5.1.</strong> El servidor está configurado para maximizar la experiencia de los jugadores con características como:
-                    <ul>
-                        <li>Eventos automáticos (Airdrops, cajas hackeadas, entre otros).</li>
-                        <li>Zona anti-raideo offline para proteger tus construcciones.</li>
-                        <li>Siempre es de día: no se experimentarán ciclos nocturnos.</li>
-                    </ul>
-                </li>
-                <li><strong>5.2.</strong> Estas configuraciones pueden ser ajustadas por los administradores según se considere necesario para el bienestar general del servidor.</li>
+                <li><strong>5.1.</strong> El servidor está configurado para maximizar la experiencia de los jugadores con características como:</li>
+                <li>- Eventos automáticos (Airdrops, cajas hackeadas, entre otros).</li>
+                <li>- Zona anti-raideo offline para proteger tus construcciones.</li>
+                <li>- Siempre es de día: no se experimentarán ciclos nocturnos.</li>
             </ul>
 
             <h3>6. SOPORTE Y ADMINISTRACIÓN</h3>
@@ -279,9 +278,12 @@
             <p><strong>Al continuar jugando en "EU Tiesos España", confirmas que has leído, entendido y aceptado estos términos y condiciones.</strong></p>
             <p><strong>Para más información o soporte, únete a nuestro Discord: <a href="https://discord.gg/tiesosesp" target="_blank">Tiesos España</a></strong></p>
 
-            <!-- Botón de volver -->
+            <!-- Botones -->
             <div id="back-button-container">
                 <button id="back-button" onclick="hideTerms()">Volver</button>
+            </div>
+            <div id="store-button-container">
+                <button id="store-button" onclick="window.location.href='https://tiesosesp.tip4serv.com'">Volver a la tienda</button>
             </div>
         </section>
     </main>
@@ -346,7 +348,6 @@
 </body>
 
 </html>
-
 
 
 
