@@ -31,7 +31,8 @@
 
     <header id="content-container">
         <div id="logo-container">
-            <img src="https://raw.githubusercontent.com/VieraGuti/EUTiesosEsp.com/main/FHC7KBW%20-%20Imgur.gif" alt="Rust Server Logo" id="logo">
+            <!-- Imagen con lazy loading -->
+            <img src="https://raw.githubusercontent.com/VieraGuti/EUTiesosEsp.com/main/FHC7KBW%20-%20Imgur.gif" alt="Rust Server Logo" id="logo" loading="lazy">
         </div>
         <p id="intro-text">¡Bienvenido a EU Tiesos España! Pulsa abajo para leer nuestros términos y condiciones.</p>
         <div id="terms-button-container">
@@ -177,28 +178,29 @@
             },
             "retina_detect": true
         });
-// Mostrar la sección de términos
-function showTerms() {
-    document.getElementById('terms-section').style.display = 'block';
-    document.getElementById('content-container').classList.add('hidden');
-    document.getElementById('discord-widget').style.zIndex = '10'; // Asegurar que el widget quede debajo
-}
+        
+        // Mostrar la sección de términos
+        function showTerms() {
+            document.getElementById('terms-section').style.display = 'block';
+            document.getElementById('content-container').classList.add('hidden');
+            document.getElementById('discord-widget').style.zIndex = '10'; // Asegurar que el widget quede debajo
+        }
 
-// Ocultar la sección de términos
-function hideTerms() {
-    document.getElementById('terms-section').style.display = 'none';
-    document.getElementById('content-container').classList.remove('hidden');
-    document.getElementById('discord-widget').style.zIndex = '50'; // Traer el widget al frente
-}
+        // Ocultar la sección de términos
+        function hideTerms() {
+            document.getElementById('terms-section').style.display = 'none';
+            document.getElementById('content-container').classList.remove('hidden');
+            document.getElementById('discord-widget').style.zIndex = '50'; // Traer el widget al frente
+        }
 
-// Configurar el scroll para agregar una clase cuando el usuario haga scroll
-window.onscroll = function() {
-    if (window.scrollY > 50) {  // Ajusta el valor de desplazamiento que desees
-        document.body.classList.add("scrolled");
-    } else {
-        document.body.classList.remove("scrolled");
-    }
-};
+        // Configurar el scroll para agregar una clase cuando el usuario haga scroll
+        window.onscroll = function() {
+            if (window.scrollY > 50) {  // Ajusta el valor de desplazamiento que desees
+                document.body.classList.add("scrolled");
+            } else {
+                document.body.classList.remove("scrolled");
+            }
+        };
     </script>
 </body>
 
