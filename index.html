@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,9 +43,17 @@
 
         /* Animación de partículas con movimiento más estable */
         @keyframes moveParticles {
-            0% { background-position: 0 0; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0 0; }
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
         }
 
         /* Animación de fondo que cubre la pantalla y regresa */
@@ -52,9 +61,11 @@
             0% {
                 background-size: 100%;
             }
+
             50% {
                 background-size: 120%;
             }
+
             100% {
                 background-size: 100%;
             }
@@ -74,8 +85,13 @@
         }
 
         @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
 
         /* Ajustes del logo con bordes redondeados y efecto */
@@ -89,8 +105,8 @@
         #logo {
             width: 250px;
             height: auto;
-            border-radius: 20px; /* Bordes redondeados */
-            box-shadow: 0 0 20px rgba(255, 165, 0, 0.5); /* Sombra sutil para destacar el logo */
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
             transition: transform 0.3s ease-in-out;
         }
 
@@ -106,7 +122,7 @@
         }
 
         button {
-            background-color: #D9771E; /* Rust-like color */
+            background-color: #D9771E;
             color: #fff;
             border: none;
             padding: 15px 30px;
@@ -117,7 +133,7 @@
         }
 
         button:hover {
-            background-color: #C24F1F; /* Darker Rust color */
+            background-color: #C24F1F;
         }
 
         /* Enlaces a redes sociales */
@@ -142,9 +158,11 @@
             0% {
                 transform: rotate(0deg);
             }
+
             50% {
                 transform: rotate(15deg);
             }
+
             100% {
                 transform: rotate(0deg);
             }
@@ -162,6 +180,7 @@
         }
     </style>
 </head>
+
 <body class="fullscreen-background">
     <div class="particle-effect"></div>
 
@@ -257,34 +276,32 @@
             <p><strong>Al continuar jugando en "EU Tiesos España", confirmas que has leído, entendido y aceptado estos términos y condiciones.</strong></p>
             <p>Para más información o soporte, únete a nuestro Discord: <a href="https://discord.gg/tiesosesp" target="_blank">discord.gg/tiesosesp</a></p>
             
-            <!-- Botón para volver -->
-            <button onclick="goBack()">Volver a la Página Principal</button>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 EU Tiesos España. Todos los derechos reservados.</p>
+    <!-- Widget de Discord -->
+    <div id="discord-widget">
+        <h3>Miembros Conectados</h3>
+        <iframe src="https://discord.com/widget?id=1191457016732995594&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         <p><a href="https://discord.gg/tiesosesp" target="_blank">Únete a nuestro Discord</a></p>
-    </footer>
+    </div>
 
     <script>
-        // Muestra los términos cuando se hace clic en el botón
+        // Función para mostrar los términos cuando se presiona el botón
         function showTerms() {
-            document.getElementById('terms-section').style.display = 'block';
-            document.getElementById('intro-text').style.display = 'none';
-            document.getElementById('terms-button').style.display = 'none';
-            document.getElementById('terms-section').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Función para volver a la página principal
-        function goBack() {
-            document.getElementById('terms-section').style.display = 'none';
-            document.getElementById('intro-text').style.display = 'block';
-            document.getElementById('terms-button').style.display = 'block';
+            var termsSection = document.getElementById('terms-section');
+            if (termsSection.style.display === 'none') {
+                termsSection.style.display = 'block';
+            } else {
+                termsSection.style.display = 'none';
+            }
         }
     </script>
+
 </body>
+
 </html>
+
 
 
 
