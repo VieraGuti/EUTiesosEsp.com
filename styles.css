@@ -362,21 +362,22 @@ button:hover {
     background-color: #C24F1F;
 }
 
-/* Estilo del widget de Discord (sin animación y en la esquina derecha en PC) */
+/* Estilo del widget de Discord (sin animación, fijado en la parte superior) */
 #discord-widget {
     margin-top: 30px;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    top: 120px;  /* Ajustado para que se vea en una posición visible */
+    left: 50%;  /* Centrado horizontalmente */
+    transform: translateX(-50%);  /* Centrado exacto */
     z-index: 50;
-    border-radius: 15px;  /* Bordes redondeados */
+    border-radius: 15px;
     border: 5px solid #F1C232;  /* Borde dorado para destacarlo */
-    box-shadow: 0 0 20px rgba(255, 165, 0, 0.6);  /* Sombra suave */
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.6);
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para que resalte */
 }
 
-/* Para los GIFs, que no sean demasiado rígidos */
+/* Para los GIFs del widget */
 #discord-widget img {
     width: 100%;
     height: auto;
@@ -388,13 +389,13 @@ button:hover {
 @media (max-width: 768px) {
     #discord-widget {
         position: fixed;
-        bottom: 10px; /* Más abajo en móviles */
+        top: 100px;  /* Ajustado para móviles */
         left: 0;
         right: 0;
         z-index: 50;
         background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para destacar */
         padding: 10px;
-        display: block; /* Asegurar que se muestre */
+        display: block;
         text-align: center;
     }
 }
@@ -406,16 +407,4 @@ button:hover {
 
 .social-links a {
     color: #F1C232;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
-}
-
-.social-links a:hover {
-    color: #D9771E;
-}
-
-#content-container.hidden {
-    display: none;
 }
