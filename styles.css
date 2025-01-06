@@ -354,3 +354,18 @@ body.no-scroll {
 body.scroll-enabled {
     overflow: auto;
 }
+
+/* Estilo del chat en vivo */
+#chat-live {
+    position: fixed;
+    left: 20px; /* Ajusta la distancia desde el borde izquierdo */
+    bottom: 20px; /* Ajusta la distancia desde el borde inferior */
+    width: 300px; /* Ajusta el tamaño del chat */
+    height: 400px; /* Ajusta el tamaño del chat */
+    background-color: #1F1F1F;
+    color: #E6E6E6;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Asegura que el chat esté por encima de otros elementos */
+}
