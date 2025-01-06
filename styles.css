@@ -14,7 +14,7 @@ body {
     position: relative;
     background: url('https://rare-gallery.com/uploads/posts/4511237-rust-game-steam-software-sun-rays-airdrop-forest.jpg') no-repeat center center fixed;
     background-size: cover;
-    animation: zoomBackground 60s infinite linear;
+    animation: zoomBackground 60s infinite linear; /* Animación de zoom en el fondo */
 }
 
 /* Animación de zoom para el fondo */
@@ -67,10 +67,10 @@ header {
     width: 200px;
     height: auto;
     margin-bottom: 20px;
-    animation: logoZoom 3s ease-in-out infinite; /* Animación de zoom */
+    animation: logoZoom 3s ease-in-out infinite; /* Animación de zoom en el logo */
 }
 
-/* Animación de zoom (agrandarse y reducirse) */
+/* Animación de zoom para el logo */
 @keyframes logoZoom {
     0% {
         transform: scale(1); /* Tamaño original */
@@ -229,6 +229,11 @@ footer a:hover {
     footer {
         font-size: 14px;
     }
+
+    /* Ocultar el widget de Discord en dispositivos móviles */
+    #discord-widget {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -281,87 +286,6 @@ body {
     100% { background-position: 100% 100%; }
 }
 
-#logo-container {
-    position: relative;
-    display: inline-block;
-    margin-top: 50px;
-}
-
-#logo {
-    width: 250px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
-}
-
-#logo:hover {
-    transform: scale(1.05);
-}
-
-#terms-button-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-button {
-    background-color: #D9771E;
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Roboto', sans-serif;
-}
-
-button:hover {
-    background-color: #C24F1F;
-}
-
-#terms-section {
-    display: none;
-    max-height: 80vh;
-    overflow-y: auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    margin-top: 20px;
-    color: #fff;
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    cursor: move;
-}
-
-#back-button-container,
-#store-button-container {
-    margin-top: 20px;
-    text-align: center;
-}
-
-#back-button,
-#store-button {
-    background-color: #FF6347;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Roboto', sans-serif;
-}
-
-#back-button:hover,
-#store-button:hover {
-    background-color: #C24F1F;
-}
-
 /* Estilo del widget de Discord */
 #discord-widget {
     margin-top: 30px;
@@ -369,20 +293,13 @@ button:hover {
     bottom: 20px;
     right: 20px;
     z-index: 50;
+    display: block; /* Asegurar que esté visible por defecto */
 }
 
 /* Responsividad para móviles */
 @media (max-width: 768px) {
     #discord-widget {
-        position: fixed;
-        bottom: 10px; /* Más abajo en móviles */
-        left: 0;
-        right: 0;
-        z-index: 50;
-        background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para destacar */
-        padding: 10px;
-        display: block; /* Asegurar que se muestre */
-        text-align: center;
+        display: none; /* Ocultar en dispositivos móviles */
     }
 }
 
