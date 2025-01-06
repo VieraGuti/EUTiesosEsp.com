@@ -10,51 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Estilos adicionales para mejorar la visualización del botón de idioma */
-        .language-selector {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
 
-        .language-button {
-            background-color: #F1C232;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'es,en,fr,de,it,pt', // Agrega más idiomas si es necesario
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
         }
-
-        .language-button:hover {
-            background-color: #d3a820;
-        }
-
-        /* Evitar la barra de Google Translate */
-        #google_translate_element {
-            display: none !important;
-        }
-
-        /* Estilo adicional para el selector */
-        select {
-            background-color: #fff;
-            color: #333;
-            font-size: 14px;
-            padding: 8px 12px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            cursor: pointer;
-        }
-
-        select:focus {
-            border-color: #F1C232;
-            outline: none;
-        }
-    </style>
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 
 <body class="home-page">
@@ -62,7 +29,6 @@
     <!-- Contenedor para partículas -->
     <div id="particles-js"></div>
 
-    <!-- Sección 1: Logo, texto, botón, y enlaces sociales -->
     <header id="content-container">
         <div id="logo-container">
             <img src="https://raw.githubusercontent.com/VieraGuti/EUTiesosEsp.com/main/FHC7KBW%20-%20Imgur.gif" alt="Rust Server Logo" id="logo">
@@ -72,23 +38,15 @@
             <button id="terms-button" onclick="showTerms()">Ver Términos y Condiciones</button>
         </div>
 
-        <!-- Selector de idioma -->
-        <div class="language-selector">
-            <label for="language" style="font-size: 16px; margin-right: 10px;">Selecciona tu idioma:</label>
-            <select id="language" onchange="changeLanguage(this)">
-                <option value="es">Español</option>
-                <option value="en">English</option>
-                <!-- Agrega más idiomas aquí si es necesario -->
-            </select>
-        </div>
-
         <div class="social-links">
             <a href="https://www.tiktok.com/@esp.tiesosrce" target="_blank">TikTok</a>
             <a href="https://x.com/TiesosEspana" target="_blank">Twitter</a>
         </div>
+
+        <!-- Selector de idioma -->
+        <div id="google_translate_element" style="margin-top: 20px;"></div>
     </header>
 
-    <!-- Sección 2: Términos y condiciones -->
     <main id="terms-section" style="display:none;">
         <section>
             <h2>Términos y Condiciones del Servidor "EU Tiesos España"</h2>
@@ -109,24 +67,48 @@
                 <li><strong>2.3.</strong> El usuario es responsable de asegurarse de que los productos adquiridos cumplen con sus expectativas antes de completar la transacción.</li>
             </ul>
 
-            <h3>3. COMPORTAMIENTO EN EL SERVIDOR</h3>
+            <h3>3. COMPORTAMIENTO Y NORMAS DEL JUEGO</h3>
             <ul>
-                <li><strong>3.1.</strong> Está estrictamente prohibido el uso de trampas, hacks, o cualquier software de terceros que altere la jugabilidad.</li>
-                <li><strong>3.2.</strong> El abuso verbal, insultos, y cualquier tipo de comportamiento tóxico no será tolerado.</li>
-                <li><strong>3.3.</strong> Los jugadores que infrinjan estas normas pueden ser sancionados con advertencias, suspensiones o baneos permanentes.</li>
+                <li><strong>3.1.</strong> <strong>Está prohibido cualquier tipo de comportamiento tóxico, incluyendo acoso, insultos o discriminación.</strong></li>
+                <li><strong>3.2.</strong> El uso de hacks, exploits o cualquier ventaja desleal resultará en la suspensión inmediata de la cuenta.</li>
+                <li><strong>3.3.</strong> Las decisiones administrativas son finales y no están sujetas a apelaciones.</li>
             </ul>
 
-            <h3>4. MODIFICACIONES DEL SERVIDOR</h3>
+            <h3>4. ESTRUCTURAS Y JUEGO JUSTO</h3>
             <ul>
-                <li><strong>4.1.</strong> El administrador del servidor se reserva el derecho de modificar los términos, condiciones o características del servidor en cualquier momento.</li>
-                <li><strong>4.2.</strong> Los jugadores serán notificados de los cambios en este documento mediante los canales oficiales del servidor.</li>
+                <li><strong>4.1.</strong> Los administradores <strong>no rompen estructuras</strong> ni interfieren en el juego.</li>
+                <li><strong>4.2.</strong> Si un jugador comete errores al construir, no se realizarán ajustes o compensaciones por parte del equipo administrativo.</li>
             </ul>
 
-            <h3>5. EXONERACIÓN DE RESPONSABILIDAD</h3>
+            <h3>5. EVENTOS Y CONFIGURACIONES DEL SERVIDOR</h3>
             <ul>
-                <li><strong>5.1.</strong> El servidor no se hace responsable de pérdidas de datos o problemas técnicos que puedan ocurrir durante el uso del servidor.</li>
-                <li><strong>5.2.</strong> El usuario es responsable de su propio comportamiento y de cumplir con las reglas establecidas en estos términos y condiciones.</li>
+                <li><strong>5.1.</strong> El servidor está configurado para maximizar la experiencia de los jugadores con características como:</li>
+                <li>- Eventos automáticos (Airdrops, cajas hackeadas, entre otros).</li>
+                <li>- Zona anti-raideo offline para proteger tus construcciones.</li>
+                <li>- Siempre es de día: no se experimentarán ciclos nocturnos.</li>
             </ul>
+
+            <h3>6. SOPORTE Y ADMINISTRACIÓN</h3>
+            <ul>
+                <li><strong>6.1.</strong> El equipo administrativo está disponible para soporte casi 24/7.</li>
+                <li><strong>6.2.</strong> <strong>No se tolerará abuso hacia los administradores ni el uso indebido de los canales de soporte.</strong></li>
+                <li><strong>6.3.</strong> Las solicitudes de soporte deben realizarse a través de los canales oficiales en Discord.</li>
+            </ul>
+
+            <h3>7. DESCARGO DE RESPONSABILIDAD</h3>
+            <ul>
+                <li><strong>7.1.</strong> El servidor "EU Tiesos España" no se hace responsable de pérdidas de progreso, recursos, estructuras o cualquier incidente causado por errores técnicos, ataques externos o caídas del servidor.</li>
+                <li><strong>7.2.</strong> Al participar en el servidor, el usuario acepta jugar bajo su propio riesgo y responsabilidad.</li>
+            </ul>
+
+            <h3>8. MODIFICACIONES A LOS TÉRMINOS Y CONDICIONES</h3>
+            <ul>
+                <li><strong>8.1.</strong> Estos términos y condiciones pueden ser actualizados en cualquier momento sin previo aviso.</li>
+                <li><strong>8.2.</strong> Es responsabilidad de los jugadores mantenerse informados sobre los cambios revisando periódicamente este documento.</li>
+            </ul>
+
+            <p><strong>Al continuar jugando en "EU Tiesos España", confirmas que has leído, entendido y aceptado estos términos y condiciones.</strong></p>
+            <p><strong>Para más información o soporte, únete a nuestro Discord: <a href="https://discord.gg/tiesosesp" target="_blank">Tiesos España</a></strong></p>
 
             <div id="back-button-container">
                 <button id="back-button" onclick="hideTerms()">Volver</button>
@@ -137,7 +119,6 @@
         </section>
     </main>
 
-    <!-- Widget de Discord -->
     <div id="discord-widget">
         <iframe src="https://discord.com/widget?id=1191457016732995594&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
     </div>
@@ -210,32 +191,23 @@
             document.getElementById('discord-widget').style.zIndex = '50';
         }
 
-        // Función para cambiar el idioma
-        function changeLanguage(select) {
-            var language = select.value;
-            window.location.href = window.location.href.split('?')[0] + '?lang=' + language;
-        }
-
-        // Mostrar u ocultar el widget de Discord con el scroll
         window.addEventListener('scroll', function () {
             let discordWidget = document.getElementById('discord-widget');
-            if (window.scrollY > 200) {
-                discordWidget.style.bottom = '20px';
+            if (window.scrollY > 200) { // Mostrar el widget después de que el usuario haya desplazado 200px
+                discordWidget.style.bottom = '20px'; // Mostrar el widget en la parte inferior
             } else {
-                discordWidget.style.bottom = '-100px';
+                discordWidget.style.bottom = '-100px'; // Ocultar el widget fuera de la pantalla
             }
         });
 
-        // Mostrar el texto en Discord cuando se hace scroll
         window.onscroll = function() {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 50) {  // Ajusta el valor de desplazamiento que desees
                 document.body.classList.add("scrolled");
             } else {
                 document.body.classList.remove("scrolled");
             }
         };
     </script>
-
 </body>
 
 </html>
