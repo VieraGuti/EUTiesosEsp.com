@@ -258,14 +258,14 @@ footer a:hover {
 
 /* Widget de Discord y texto */
 #discord-widget {
-    position: fixed; /* Cambiado a fixed para que se quede en un lugar fijo */
-    bottom: 40px; /* Posición desde el borde inferior */
-    right: 20px; /* A la derecha */
+    position: fixed; /* Esto lo coloca en una posición fija */
+    bottom: 40px; /* A 40px desde el borde inferior */
+    right: 20px; /* A 20px desde el borde derecho */
     border: 3px solid #D9771E;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    transition: bottom 0.3s ease-in-out; /* Transición suave para el desplazamiento */
+    z-index: 1000; /* Asegura que el widget siempre esté encima del contenido */
+    transition: none; /* Desactiva la transición para el desplazamiento */
 }
 
 #discord-widget-text {
