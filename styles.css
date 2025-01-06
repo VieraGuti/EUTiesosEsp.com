@@ -1,83 +1,113 @@
-/* Restablecer los estilos por defecto */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Definición de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-/* Fondo general */
+/* Base y cuerpo de la página */
 body {
-    background-color: #121212 !important;
-    color: #E6E6E6;
-    font-family: 'Russo One', sans-serif;
-    text-align: center;
-    line-height: 1.6;
-    font-size: 16px;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #121212;
+    color: #E6E6E6;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-/* Logo y texto de bienvenida */
-#logo-container {
-    margin-top: 50px;
-    margin-bottom: 30px;
+/* Efecto de partículas de fondo */
+.particle-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('https://cdn.pixabay.com/photo/2017/08/30/00/21/abstract-2695564_960_720.jpg') repeat;
+    animation: moveParticles 60s infinite linear;
 }
 
-#logo {
+@keyframes moveParticles {
+    0% { background-position: 0 0; }
+    100% { background-position: 10000px 10000px; }
+}
+
+/* Encabezado y logo */
+header {
+    padding: 20px;
+}
+
+#logo-container img {
     width: 200px;
     height: auto;
-    animation: gifLoop 3s infinite;
+    margin-bottom: 20px;
 }
 
-/* Animación para el GIF */
-@keyframes gifLoop {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-/* Título y botón */
+/* Texto de bienvenida */
 #intro-text {
     font-size: 24px;
     color: #F1C232;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
     margin-top: 20px;
 }
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Estilo de botones */
 button {
-    background-color: #D9771E; /* Rust-like color */
-    color: #fff;
+    background-color: #D9771E; /* Color de Rust */
+    color: white;
+    padding: 16px 32px;
     border: none;
-    padding: 15px 30px;
+    border-radius: 8px;
     font-size: 18px;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     margin-top: 20px;
-    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
-    background-color: #C24F1F; /* Darker Rust color */
+    background-color: #C24F1F;
+    transform: scale(1.05);
 }
 
-/* Estilo para la sección de términos y condiciones */
+button:focus {
+    outline: none;
+}
+
+/* Enlaces de redes sociales */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #F1C232;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #D9771E;
+}
+
+/* Estilo de la sección de términos */
 main {
-    margin-top: 30px;
     padding: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #1E1E1E;
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
 h2, h3 {
     color: #F1C232;
-    margin-bottom: 15px;
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: bold;
+    font-size: 26px;
+    margin-top: 20px;
 }
 
 ul {
@@ -85,73 +115,54 @@ ul {
     padding-left: 0;
 }
 
-li {
+ul li {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
-strong {
-    color: #D9771E; /* Rust-like color */
-}
-
-em {
-    color: #F1C232;
+/* Fondo de la sección de términos */
+section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 hr {
-    border: 1px solid #444;
+    border: 0;
+    border-top: 1px solid #F1C232;
     margin: 20px 0;
 }
 
+/* Enlaces de Discord */
 footer {
+    padding: 20px;
     background-color: #121212;
+    color: #E6E6E6;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 16px;
+    border-top: 1px solid #F1C232;
+}
+
+footer a {
     color: #F1C232;
-    padding: 20px 0;
-    font-size: 14px;
-}
-
-footer p {
-    margin: 0;
-}
-
-a {
-    color: #D9771E;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-a:hover {
-    color: #F1C232;
-}
-
-/* Estilo para hacer que los términos se desplieguen */
-#terms-section {
-    display: none;
-}
-
-#terms-button {
-    background-color: #1E1E1E;
-    color: #F1C232;
-    padding: 15px 25px;
-    border: 2px solid #F1C232;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 30px;
-    display: inline-block;
-    text-align: center;
-}
-
-#terms-button:hover {
-    background-color: #F1C232;
-    color: #1E1E1E;
+footer a:hover {
+    color: #D9771E;
 }
 
 /* Responsividad */
 @media (max-width: 768px) {
-    #logo {
+    #logo-container img {
         width: 150px;
     }
 
@@ -159,46 +170,47 @@ a:hover {
         font-size: 20px;
     }
 
-    button, #terms-button {
-        padding: 12px 20px;
+    button {
+        padding: 14px 28px;
         font-size: 16px;
-    }
-
-    main {
-        padding: 15px;
-        max-width: 100%;
     }
 
     h2, h3 {
         font-size: 22px;
     }
 
-    li {
+    ul li {
         font-size: 16px;
+    }
+
+    footer {
+        font-size: 14px;
     }
 }
 
-/* Estilos para el enlace del botón y alineación */
-#terms-button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
+@media (max-width: 480px) {
+    #logo-container img {
+        width: 120px;
+    }
 
-#terms-button-container a {
-    background-color: #1E1E1E;
-    color: #F1C232;
-    padding: 15px 25px;
-    border: 2px solid #F1C232;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    display: inline-block;
-}
+    #intro-text {
+        font-size: 18px;
+    }
 
-#terms-button-container a:hover {
-    background-color: #F1C232;
-    color: #1E1E1E;
+    button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    h2, h3 {
+        font-size: 18px;
+    }
+
+    ul li {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
 }
