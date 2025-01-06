@@ -240,12 +240,13 @@ footer a:hover {
 /* Widget de Discord en la esquina inferior derecha */
 #discord-widget {
     position: fixed;
-    bottom: 20px;
+    bottom: -100px; /* Inicialmente fuera de la vista */
     right: 20px;
     border: 3px solid #D9771E;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+    z-index: 1000;
+    transition: bottom 0.3s ease-in-out; /* Transición suave para el desplazamiento */
 }
 
 /* Responsividad */
@@ -277,8 +278,9 @@ footer a:hover {
 
     /* Ajustar el tamaño de la imagen de fondo en pantallas más pequeñas */
     body.home-page {
-        background-size: auto 100%; /* Ajusta la imagen de fondo para que no se corte */
+        background-size: cover;
         background-position: center center;
+        animation: zoomBackground 30s infinite alternate ease-in-out;
     }
 }
 
