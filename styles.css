@@ -19,10 +19,11 @@ body {
     min-height: 100vh; /* Asegura que la página ocupe toda la altura de la ventana */
 }
 
-/* Página principal con imagen de fondo y efecto zoom */
+/* Página principal con imagen de fondo y efecto zoom (escritorio) */
 body.home-page {
     background: url('https://rare-gallery.com/uploads/posts/4511237-rust-game-steam-software-sun-rays-airdrop-forest.jpg') no-repeat center center fixed;
     background-size: cover;
+    background-position: center center;
     animation: zoomBackground 30s infinite alternate ease-in-out;
 }
 
@@ -30,31 +31,31 @@ body.home-page {
 @media (max-width: 768px) {
     body.home-page {
         background: url('https://w0.peakpx.com/wallpaper/147/1012/HD-wallpaper-rust-game-simple-pc-rust-game-video-game.jpg') no-repeat center center;
-        background-size: 110%; /* Se hace un 10% más grande */
+        background-size: 110%; /* Aumenta la imagen un 10% */
         background-position: center center; /* Centra la imagen de fondo */
         min-height: 100vh; /* Asegura que la imagen cubra toda la altura de la ventana */
-        animation: zoomBackgroundMobile 30s infinite alternate ease-in-out; /* Nueva animación para móviles */
         background-attachment: scroll; /* Desactiva el fondo fijo en móviles */
+        animation: zoomBackgroundMobile 30s infinite alternate ease-in-out; /* Animación ajustada para móviles */
     }
 }
 
 /* Animación de zoom para dispositivos móviles */
 @keyframes zoomBackgroundMobile {
     0% {
-        background-size: 110%; /* Empieza con un 10% más grande */
+        background-size: 110%; /* Empieza con la imagen un 10% más grande */
     }
     100% {
-        background-size: 120%; /* Aumenta hasta un 20% más grande */
+        background-size: 115%; /* Aumenta la imagen un 15% */
     }
 }
 
-/* Animación de zoom para dispositivos móviles */
-@keyframes zoomBackgroundMobile {
+/* Animación de zoom para fondo de escritorio (sin cambios) */
+@keyframes zoomBackground {
     0% {
-        background-size: 110%; /* Empieza con un 10% más grande */
+        background-size: 100%; /* Comienza sin zoom */
     }
     100% {
-        background-size: 120%; /* Aumenta hasta un 20% más grande */
+        background-size: 120%; /* Aumenta la imagen al 120% */
     }
 }
 
@@ -62,7 +63,6 @@ body.home-page {
 body.clicked {
     background-color: #1F1F1F;
 }
-
 /* Contenedor de partículas */
 #particles-js {
     position: absolute;
