@@ -1,7 +1,6 @@
 /* Definición de fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 /* Base y cuerpo de la página */
 body {
@@ -67,11 +66,10 @@ header {
     }
 }
 
-/* Texto de bienvenida en blanco y con fuente más gruesa */
+/* Texto de bienvenida */
 #intro-text {
     font-size: 24px;
-    color: #ffffff;  /* Texto en blanco */
-    font-weight: 500; /* Fuente más gruesa */
+    color: #D9771E;  /* Color más rústico similar al de Rust */
     opacity: 0;
     animation: fadeIn 2s forwards;
     margin-top: 20px;
@@ -347,12 +345,47 @@ button:hover {
     background-color: #C24F1F;
 }
 
-/* Discord Widget en móvil */
+/* Estilo del widget de Discord */
 #discord-widget {
     margin-top: 30px;
     position: fixed;
-    bottom: 10px;
+    bottom: 20px;
     right: 20px;
     z-index: 50;
-    width: 100%; /* Para ocupar todo el ancho en móviles */
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    #discord-widget {
+        position: fixed;
+        bottom: 10px; /* Más abajo en móviles */
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para destacar */
+        padding: 10px;
+        display: block; /* Asegurar que se muestre */
+        text-align: center;
+    }
+}
+
+.social-links {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.social-links a {
+    color: #F1C232;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.social-links a:hover {
+    color: #D9771E;
+}
+
+#content-container.hidden {
+    display: none;
 }
