@@ -6,15 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Servidor Rust Console Edition - EU Tiesos España">
     <title>EU Tiesos España - Rust Console Edition</title>
-    <!-- Vincula el archivo CSS -->
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/VieraGuti/EUTiesosEsp.com/main/styles.css">
-    <!-- Fuente de Google, Rust-like style -->
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <!-- GoatCounter Tracking -->
-    <script data-goatcounter="https://tiesos-esp.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    <!-- Animación de fondo o efectos -->
     <style>
-        /* Estilos de cuerpo */
+        /* Estilos de fondo y efectos */
         body {
             position: relative;
             background: url('https://rare-gallery.com/uploads/posts/4511237-rust-game-steam-software-sun-rays-airdrop-forest.jpg') no-repeat center center fixed;
@@ -29,7 +22,7 @@
             overflow: hidden;
         }
 
-        /* Efecto de partículas sutil en el fondo (más estable) */
+        /* Efecto de partículas sutil en el fondo */
         .particle-effect {
             position: absolute;
             top: 0;
@@ -41,65 +34,21 @@
             animation: moveParticles 30s infinite linear;
         }
 
-        /* Animación de partículas con movimiento más estable */
         @keyframes moveParticles {
             0% {
                 background-position: 0 0;
             }
 
-            50% {
+            100% {
                 background-position: 100% 100%;
             }
-
-            100% {
-                background-position: 0 0;
-            }
         }
 
-        /* Animación de fondo que cubre la pantalla y regresa */
-        @keyframes fullScreenBackground {
-            0% {
-                background-size: 100%;
-            }
-
-            50% {
-                background-size: 120%;
-            }
-
-            100% {
-                background-size: 100%;
-            }
-        }
-
-        .fullscreen-background {
-            animation: fullScreenBackground 20s ease-in-out infinite;
-        }
-
-        /* Animación de texto de bienvenida */
-        #intro-text {
-            font-size: 24px;
-            color: #F1C232;
-            margin-top: 20px;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        /* Ajustes del logo con bordes redondeados y efecto */
+        /* Estilo de logo */
         #logo-container {
             position: relative;
             display: inline-block;
             margin-top: 50px;
-            animation: logoAnimation 3s ease-in-out infinite;
         }
 
         #logo {
@@ -114,7 +63,7 @@
             transform: scale(1.05);
         }
 
-        /* Ajustes de los botones */
+        /* Estilo de los botones */
         #terms-button-container {
             margin-top: 20px;
             display: flex;
@@ -136,7 +85,51 @@
             background-color: #C24F1F;
         }
 
-        /* Enlaces a redes sociales */
+        /* Sección de términos */
+        #terms-section {
+            display: none;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            margin-top: 20px;
+            color: #fff;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            cursor: move;
+        }
+
+        /* Botón de volver */
+        #back-button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #back-button {
+            background-color: #FF6347;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #back-button:hover {
+            background-color: #C24F1F;
+        }
+
+        /* Discord Widget */
+        #discord-widget {
+            margin-top: 30px;
+        }
+
+        /* Estilo para enlaces de redes sociales */
         .social-links {
             margin-top: 20px;
             font-size: 18px;
@@ -153,50 +146,19 @@
             color: #D9771E;
         }
 
-        /* Animación para el logo */
-        @keyframes logoAnimation {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.1);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* Ajustes para la sección de términos */
-        #terms-section {
-            max-height: 80vh;
-            overflow-y: auto;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            margin-top: 20px;
-            color: #fff;
+        /* Ocultar contenido cuando se muestran los términos */
+        #content-container.hidden {
             display: none;
-        }
-
-        /* Ajustes del widget de Discord */
-        #discord-widget {
-            margin-top: 30px;
-        }
-
-        /* Botón de volver */
-        #back-button-container {
-            margin-top: 20px;
-            text-align: center;
         }
     </style>
 </head>
 
-<body class="fullscreen-background">
+<body>
+    <!-- Fondo con partículas y animación -->
     <div class="particle-effect"></div>
 
-    <header>
+    <!-- Contenedor principal -->
+    <header id="content-container">
         <div id="logo-container">
             <img src="https://raw.githubusercontent.com/VieraGuti/EUTiesosEsp.com/main/FHC7KBW%20-%20Imgur.gif" alt="Rust Server Logo" id="logo">
         </div>
@@ -205,20 +167,18 @@
             <button id="terms-button" onclick="showTerms()">Ver Términos y Condiciones</button>
         </div>
 
-        <!-- Enlaces a Redes Sociales (Actualizados) -->
         <div class="social-links">
             <a href="https://www.tiktok.com/@esp.tiesosrce" target="_blank">TikTok</a>
             <a href="https://x.com/TiesosEspana" target="_blank">Twitter</a>
         </div>
     </header>
 
-    <!-- Sección de Términos y Condiciones, inicialmente oculta -->
+    <!-- Sección de Términos y Condiciones -->
     <main id="terms-section">
         <section>
             <h2>Términos y Condiciones del Servidor "EU Tiesos España"</h2>
             <p><strong>Última actualización: [01-01-2025]</strong></p>
             <p>Al ingresar y participar en el servidor "EU Tiesos España" de Rust Console Edition, aceptas cumplir con los siguientes términos y condiciones. Estos están diseñados para garantizar una experiencia justa, amigable y fluida para todos los jugadores.</p>
-            <hr>
 
             <h3>1. VINCULACIÓN OBLIGATORIA CON KAOSBOT</h3>
             <ul>
@@ -226,7 +186,6 @@
                 <li><strong>1.2.</strong> La vinculación con <em>KaosBot</em> es esencial para acceder a ciertos beneficios, como kits gratuitos y funcionalidades adicionales en Discord.</li>
                 <li><strong>1.3.</strong> Las cuentas no vinculadas podrán ser limitadas en su acceso o beneficios del servidor.</li>
             </ul>
-            <hr>
 
             <h3>2. COMPRA DE KITS Y SERVICIOS</h3>
             <ul>
@@ -234,7 +193,6 @@
                 <li><strong>2.2.</strong> <strong>NO SE ACEPTAN DEVOLUCIONES</strong> por ningún motivo, incluyendo problemas técnicos o decisiones personales.</li>
                 <li><strong>2.3.</strong> El usuario es responsable de asegurarse de que los productos adquiridos cumplen con sus expectativas antes de completar la transacción.</li>
             </ul>
-            <hr>
 
             <h3>3. COMPORTAMIENTO Y NORMAS DEL JUEGO</h3>
             <ul>
@@ -242,26 +200,24 @@
                 <li><strong>3.2.</strong> El uso de hacks, exploits o cualquier ventaja desleal resultará en la suspensión inmediata de la cuenta.</li>
                 <li><strong>3.3.</strong> Las decisiones administrativas son finales y no están sujetas a apelaciones.</li>
             </ul>
-            <hr>
 
             <h3>4. ESTRUCTURAS Y JUEGO JUSTO</h3>
             <ul>
                 <li><strong>4.1.</strong> Los administradores <strong>no rompen estructuras</strong> ni interfieren en el juego.</li>
                 <li><strong>4.2.</strong> Si un jugador comete errores al construir, no se realizarán ajustes o compensaciones por parte del equipo administrativo.</li>
             </ul>
-            <hr>
 
             <h3>5. EVENTOS Y CONFIGURACIONES DEL SERVIDOR</h3>
             <ul>
-                <li><strong>5.1.</strong> El servidor está configurado para maximizar la experiencia de los jugadores con características como:</li>
-                <ul>
-                    <li>- Eventos automáticos (Airdrops, cajas hackeadas, entre otros).</li>
-                    <li>- Zona anti-raideo offline para proteger tus construcciones.</li>
-                    <li>- Siempre es de día: no se experimentarán ciclos nocturnos.</li>
-                </ul>
+                <li><strong>5.1.</strong> El servidor está configurado para maximizar la experiencia de los jugadores con características como:
+                    <ul>
+                        <li>Eventos automáticos (Airdrops, cajas hackeadas, entre otros).</li>
+                        <li>Zona anti-raideo offline para proteger tus construcciones.</li>
+                        <li>Siempre es de día: no se experimentarán ciclos nocturnos.</li>
+                    </ul>
+                </li>
                 <li><strong>5.2.</strong> Estas configuraciones pueden ser ajustadas por los administradores según se considere necesario para el bienestar general del servidor.</li>
             </ul>
-            <hr>
 
             <h3>6. SOPORTE Y ADMINISTRACIÓN</h3>
             <ul>
@@ -269,28 +225,25 @@
                 <li><strong>6.2.</strong> <strong>No se tolerará abuso hacia los administradores ni el uso indebido de los canales de soporte.</strong></li>
                 <li><strong>6.3.</strong> Las solicitudes de soporte deben realizarse a través de los canales oficiales en Discord.</li>
             </ul>
-            <hr>
 
             <h3>7. DESCARGO DE RESPONSABILIDAD</h3>
             <ul>
                 <li><strong>7.1.</strong> El servidor "EU Tiesos España" no se hace responsable de pérdidas de progreso, recursos, estructuras o cualquier incidente causado por errores técnicos, ataques externos o caídas del servidor.</li>
                 <li><strong>7.2.</strong> Al participar en el servidor, el usuario acepta jugar bajo su propio riesgo y responsabilidad.</li>
             </ul>
-            <hr>
 
             <h3>8. MODIFICACIONES A LOS TÉRMINOS Y CONDICIONES</h3>
             <ul>
                 <li><strong>8.1.</strong> Estos términos y condiciones pueden ser actualizados en cualquier momento sin previo aviso.</li>
                 <li><strong>8.2.</strong> Es responsabilidad de los jugadores mantenerse informados sobre los cambios revisando periódicamente este documento.</li>
             </ul>
-            <hr>
 
             <p><strong>Al continuar jugando en "EU Tiesos España", confirmas que has leído, entendido y aceptado estos términos y condiciones.</strong></p>
             <p><strong>Para más información o soporte, únete a nuestro Discord: <a href="https://discord.gg/tiesosesp" target="_blank">Tiesos España</a></strong></p>
 
             <!-- Botón de volver -->
             <div id="back-button-container">
-                <button onclick="hideTerms()">Volver</button>
+                <button id="back-button" onclick="hideTerms()">Volver</button>
             </div>
         </section>
     </main>
@@ -301,20 +254,59 @@
     </div>
 
     <script>
+        // Función para mostrar los términos
         function showTerms() {
             document.getElementById('terms-section').style.display = 'block';
-            document.getElementById('terms-button-container').style.display = 'none'; // Oculta el botón
+            document.getElementById('content-container').classList.add('hidden');
         }
 
+        // Función para ocultar los términos
         function hideTerms() {
             document.getElementById('terms-section').style.display = 'none';
-            document.getElementById('terms-button-container').style.display = 'flex'; // Vuelve a mostrar el botón
+            document.getElementById('content-container').classList.remove('hidden');
+        }
+
+        // Función para permitir mover el cuadro de términos
+        dragElement(document.getElementById("terms-section"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            if (document.getElementById(elmnt.id + "-header")) {
+                document.getElementById(elmnt.id + "-header").onmousedown = dragMouseDown;
+            } else {
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
         }
     </script>
-
 </body>
 
 </html>
+
 
 
 
