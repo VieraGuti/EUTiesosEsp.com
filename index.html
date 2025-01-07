@@ -141,29 +141,21 @@
     </div>
 
     <!-- Audio de fondo -->
-    <audio id="background-audio" loop>
+    <audio id="background-audio" autoplay loop>
         <source src="https://raw.githubusercontent.com/VieraGuti/EUTiesosEsp.com/main/test4_pkwLbi7k.mp3" type="audio/mp3">
         Tu navegador no soporta la etiqueta de audio.
     </audio>
 
     <script>
-        let audioPlayed = false;
-
-        // Reproducir el audio automáticamente
-        window.onload = function() {
-            var audio = document.getElementById('background-audio');
-            audio.play();  // Reproduce el audio
-        };
-
-        // Configurar el volumen del audio al 25% (0.25)
+        // Configurar el volumen del audio al 40% (0.4)
         var audio = document.getElementById('background-audio');
-        audio.volume = 0.25;  // Establecer volumen al 25%
+        audio.volume = 0.4;  // Establecer volumen al 40%
 
         // Configuración de las partículas
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 250,
+                    "value": 200,
                     "density": {
                         "enable": true,
                         "value_area": 800
@@ -183,7 +175,7 @@
                     }
                 },
                 "opacity": {
-                    "value": 0.6,
+                    "value": 0.5,
                     "random": false,
                     "anim": {
                         "enable": true,
@@ -193,7 +185,7 @@
                     }
                 },
                 "size": {
-                    "value": 4,
+                    "value": 3,
                     "random": true,
                     "anim": {
                         "enable": true,
