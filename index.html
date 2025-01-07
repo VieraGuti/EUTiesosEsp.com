@@ -141,7 +141,7 @@
     </div>
 
     <!-- Audio de fondo -->
-    <audio id="background-audio" loop>
+    <audio id="background-audio">
         <source src="https://raw.githubusercontent.com/VieraGuti/EUTiesosEsp.com/main/test4_pkwLbi7k.mp3" type="audio/mp3">
         Tu navegador no soporta la etiqueta de audio.
     </audio>
@@ -153,83 +153,88 @@
             audio.play();  // Reproduce el audio
         });
 
+        // Configurar el volumen del audio al 40% (0.4)
+        var audio = document.getElementById('background-audio');
+        audio.volume = 0.4;  // Establecer volumen al 40%
+
         // Configuración de las partículas
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 50,
+                    "value": 200,
                     "density": {
                         "enable": true,
                         "value_area": 800
                     }
                 },
                 "color": {
-                    "value": "#F1C232"
+                    "value": "#ffffff"
                 },
                 "shape": {
                     "type": "circle",
                     "stroke": {
                         "width": 0,
-                        "color": "#F1C232"
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
                     }
                 },
                 "opacity": {
-                    "value": 0.8,
-                    "random": true,
+                    "value": 0.5,
+                    "random": false,
                     "anim": {
                         "enable": true,
                         "speed": 1,
-                        "opacity_min": 0.1
+                        "opacity_min": 0.1,
+                        "sync": false
                     }
                 },
                 "size": {
-                    "value": 4,
+                    "value": 3,
                     "random": true,
                     "anim": {
                         "enable": true,
-                        "speed": 2,
-                        "size_min": 0.1
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
                     }
                 },
                 "line_linked": {
-                    "enable": false
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
                 },
                 "move": {
                     "enable": true,
-                    "speed": 3,
-                    "direction": "random",
-                    "random": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
                     "straight": false,
                     "out_mode": "out",
-                    "bounce": false
+                    "bounce": false,
+                    "attract": {
+                        "enable": false
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "window",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
                 }
             },
             "retina_detect": true
         });
-        
-        // Mostrar la sección de términos
-        function showTerms() {
-            document.getElementById('terms-section').style.display = 'block';
-            document.getElementById('content-container').classList.add('hidden');
-            document.getElementById('discord-widget').style.zIndex = '10'; // Asegurar que el widget quede debajo
-        }
-
-        // Ocultar la sección de términos
-        function hideTerms() {
-            document.getElementById('terms-section').style.display = 'none';
-            document.getElementById('content-container').classList.remove('hidden');
-            document.getElementById('discord-widget').style.zIndex = '50'; // Traer el widget al frente
-        }
-
-        // Configurar el scroll para agregar una clase cuando el usuario haga scroll
-        window.onscroll = function() {
-            if (window.scrollY > 50) {  // Ajusta el valor de desplazamiento que desees
-                document.body.classList.add("scrolled");
-            } else {
-                document.body.classList.remove("scrolled");
-            }
-        };
     </script>
 </body>
-
 </html>
