@@ -161,6 +161,13 @@
             document.getElementById('terms-button').style.display = "none";  // Oculta el botón
         }
 
+        // Función para ocultar los términos y mostrar el contenido inicial
+        function hideTerms() {
+            document.getElementById('terms-section').style.display = "none";  // Oculta los términos
+            document.getElementById('intro-text').style.display = "block";  // Muestra el texto introductorio
+            document.getElementById('terms-button').style.display = "block";  // Muestra el botón
+        }
+
         // Configurar el volumen del audio al 40% (0.4)
         var audio = document.getElementById('background-audio');
         audio.volume = 0.4;  // Establecer volumen al 40%
