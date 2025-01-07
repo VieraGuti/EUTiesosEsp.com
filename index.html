@@ -141,19 +141,18 @@
     </div>
 
     <!-- Audio de fondo -->
-    <audio id="background-audio" autoplay loop muted>
+    <audio id="background-audio" loop>
         <source src="https://raw.githubusercontent.com/VieraGuti/EUTiesosEsp.com/main/test4_pkwLbi7k.mp3" type="audio/mp3">
         Tu navegador no soporta la etiqueta de audio.
     </audio>
 
     <script>
-        // Eliminar el silencio después de que la página haya cargado
-        window.addEventListener('load', function() {
-            document.getElementById('background-audio').muted = false;
+        // Reproducir el audio cuando el usuario haga clic en cualquier parte de la página
+        document.addEventListener("click", function() {
+            var audio = document.getElementById('background-audio');
+            audio.play();  // Reproduce el audio
         });
-    </script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
-    <script>
+
         // Configuración de las partículas
         particlesJS('particles-js', {
             "particles": {
