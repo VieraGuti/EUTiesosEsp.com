@@ -141,7 +141,7 @@
     </div>
 
     <!-- Audio de fondo -->
-    <audio id="background-audio">
+    <audio id="background-audio" loop>
         <source src="https://raw.githubusercontent.com/VieraGuti/EUTiesosEsp.com/main/test4_pkwLbi7k.mp3" type="audio/mp3">
         Tu navegador no soporta la etiqueta de audio.
     </audio>
@@ -149,34 +149,21 @@
     <script>
         let audioPlayed = false;
 
-        // Reproducir el audio y mostrar los términos al hacer clic en el botón
-        function showTerms() {
+        // Reproducir el audio automáticamente
+        window.onload = function() {
             var audio = document.getElementById('background-audio');
-            if (!audioPlayed) {
-                audio.play();  // Reproduce el audio solo la primera vez
-                audioPlayed = true;  // Marca que el audio ya se ha reproducido
-            }
-            document.getElementById('terms-section').style.display = "block";  // Muestra los términos
-            document.getElementById('intro-text').style.display = "none";  // Oculta el texto introductorio
-            document.getElementById('terms-button').style.display = "none";  // Oculta el botón
-        }
+            audio.play();  // Reproduce el audio
+        };
 
-        // Función para ocultar los términos y mostrar el contenido inicial
-        function hideTerms() {
-            document.getElementById('terms-section').style.display = "none";  // Oculta los términos
-            document.getElementById('intro-text').style.display = "block";  // Muestra el texto introductorio
-            document.getElementById('terms-button').style.display = "block";  // Muestra el botón
-        }
-
-        // Configurar el volumen del audio al 40% (0.4)
+        // Configurar el volumen del audio al 25% (0.25)
         var audio = document.getElementById('background-audio');
-        audio.volume = 0.4;  // Establecer volumen al 40%
+        audio.volume = 0.25;  // Establecer volumen al 25%
 
         // Configuración de las partículas
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 200,
+                    "value": 250,
                     "density": {
                         "enable": true,
                         "value_area": 800
@@ -196,7 +183,7 @@
                     }
                 },
                 "opacity": {
-                    "value": 0.5,
+                    "value": 0.6,
                     "random": false,
                     "anim": {
                         "enable": true,
@@ -206,7 +193,7 @@
                     }
                 },
                 "size": {
-                    "value": 3,
+                    "value": 4,
                     "random": true,
                     "anim": {
                         "enable": true,
