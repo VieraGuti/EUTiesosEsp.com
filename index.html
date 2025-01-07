@@ -26,7 +26,7 @@
 
 <body class="home-page">
 
-    <!-- Contenedor para partículas (fondo) -->
+    <!-- Contenedor para partículas -->
     <div id="particles-js"></div>
 
     <header id="content-container">
@@ -123,112 +123,109 @@
         <iframe src="https://discord.com/widget?id=1191457016732995594&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
     </div>
 
-    <!-- Tawk.to Chat Widget -->
-    <div id="tawk-chat" style="position: fixed; bottom: 10px; left: 10px; z-index: 9999;">
-        <!--Start of Tawk.to Script-->
-        <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/677c2994af5bfec1dbe77281/1igug4r0b';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-        })();
-        </script>
-        <!--End of Tawk.to Script-->
-    </div>
+<!-- Tawk.to Chat Widget -->
+<div id="tawk-chat" style="position: fixed; bottom: 10px; left: 10px; z-index: 9999;">
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/677c2994af5bfec1dbe77281/1igug4r0b';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</div>
 
-    <!-- Audio de fondo -->
-    <audio id="background-audio" autoplay loop>
-        <source src="https://raw.githubusercontent.com/VieraGuti/EUTiesosEsp.com/main/test4_pkwLbi7k.mp3" type="audio/mp3">
-        Tu navegador no soporta la etiqueta de audio.
-    </audio>
-
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Configurar el volumen del audio al 40% (0.4)
-        var audio = document.getElementById('background-audio');
-        audio.volume = 0.4;  // Establecer volumen al 40%
-
         // Configuración de las partículas
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 200,
+                    "value": 50,
                     "density": {
                         "enable": true,
                         "value_area": 800
                     }
                 },
                 "color": {
-                    "value": "#ffffff"
+                    "value": "#F1C232"
                 },
                 "shape": {
                     "type": "circle",
                     "stroke": {
                         "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
+                        "color": "#F1C232"
                     }
                 },
                 "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": true,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
+                    "value": 0.8,
                     "random": true,
                     "anim": {
                         "enable": true,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
+                        "speed": 1,
+                        "opacity_min": 0.1
+                    }
+                },
+                "size": {
+                    "value": 4,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "size_min": 0.1
                     }
                 },
                 "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
+                    "enable": false
                 },
                 "move": {
                     "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
+                    "speed": 3,
+                    "direction": "random",
+                    "random": true,
                     "straight": false,
                     "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "window",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "repulse"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    }
+                    "bounce": false
                 }
             },
             "retina_detect": true
         });
+        
+        // Mostrar la sección de términos
+        function showTerms() {
+            document.getElementById('terms-section').style.display = 'block';
+            document.getElementById('content-container').classList.add('hidden');
+            document.getElementById('discord-widget').style.zIndex = '10'; // Asegurar que el widget quede debajo
+        }
+
+        // Ocultar la sección de términos
+        function hideTerms() {
+            document.getElementById('terms-section').style.display = 'none';
+            document.getElementById('content-container').classList.remove('hidden');
+            document.getElementById('discord-widget').style.zIndex = '50'; // Traer el widget al frente
+        }
+
+        // Configurar el scroll para agregar una clase cuando el usuario haga scroll
+        window.onscroll = function() {
+            if (window.scrollY > 50) {  // Ajusta el valor de desplazamiento que desees
+                document.body.classList.add("scrolled");
+            } else {
+                document.body.classList.remove("scrolled");
+            }
+        };
+
+        // Reproducir video en el iframe
+        var iframe = document.createElement('iframe');
+        iframe.src = "https://www.youtube.com/embed/UpePCJR9Na8?autoplay=1&loop=1&playlist=UpePCJR9Na8";
+        iframe.width = "0";
+        iframe.height = "0";
+        document.body.appendChild(iframe);
     </script>
 </body>
+
 </html>
