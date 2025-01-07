@@ -35,11 +35,10 @@
         Tu navegador no soporta la etiqueta de audio.
     </audio>
 
-    <!-- Reproductor de audio visible en la esquina inferior izquierda -->
-    <audio id="audio-player" autoplay loop controls style="position: fixed; bottom: 10px; left: 10px; z-index: 9999;">
-        <source src="descent.mp3" type="audio/mp3">
-        Tu navegador no soporta la etiqueta de audio.
-    </audio>
+    <!-- Botón Play/Stop -->
+    <div id="audio-toggle-button-container" style="position: fixed; bottom: 10px; left: 10px; z-index: 9999;">
+        <button id="audio-toggle-button" onclick="toggleAudio()">Stop</button>
+    </div>
 
     <header id="content-container">
         <div id="logo-container">
@@ -222,23 +221,20 @@
             document.getElementById('discord-widget').style.zIndex = '50'; // Traer el widget al frente
         }
 
-        // Configurar el scroll para agregar una clase cuando el usuario haga scroll
-        window.onscroll = function() {
-            if (window.scrollY > 50) {  // Ajusta el valor de desplazamiento que desees
-                document.body.classList.add("scrolled");
+        // Función para reproducir/pausar el audio
+        function toggleAudio() {
+            var audio = document.getElementById('background-audio');
+            var button = document.getElementById('audio-toggle-button');
+            
+            if (audio.paused) {
+                audio.play();
+                button.textContent = "Stop";
             } else {
-                document.body.classList.remove("scrolled");
+                audio.pause();
+                button.textContent = "Play";
             }
-        };
-
-        // Reproducir video en el iframe
-        var iframe = document.createElement('iframe');
-        iframe.src = "https://www.youtube.com/embed/UpePCJR9Na8?autoplay=1&loop=1&playlist=UpePCJR9Na8";
-        iframe.width = "0";
-        iframe.height = "0";
-        document.body.appendChild(iframe);
+        }
     </script>
 </body>
 
 </html>
- 
